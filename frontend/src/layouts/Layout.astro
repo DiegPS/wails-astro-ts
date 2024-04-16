@@ -19,17 +19,6 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
 	@font-face {
 		font-family: "Nunito";
 		font-style: normal;
@@ -39,6 +28,8 @@ const { title } = Astro.props;
 			url("/fonts/nunito-v16-latin-regular.woff2") format("woff2");
 	}
 	html {
+		background: #13151acc;
+		color: #f2f7f2;
 		font-family:
 			"Nunito",
 			-apple-system,
@@ -52,7 +43,6 @@ const { title } = Astro.props;
 			"Droid Sans",
 			"Helvetica Neue",
 			sans-serif;
-		background: #13151a77;
 	}
 	code {
 		font-family:

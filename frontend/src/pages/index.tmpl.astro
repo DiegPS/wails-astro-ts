@@ -1,25 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Input from "../components/Input.astro";
+import Logo from "../components/Logo.astro";
 ---
 
 <Layout title="{{.ProjectName}}">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<Input
-			href="https://docs.astro.build/"
-			title="Documentation"
-			body="Learn how Astro works and explore the official API docs."
-		/>
+		<h1>Wails + Astro (TypeScript)</h1>
+		<section>
+			<Logo
+				href="https://docs.astro.build/"
+				title="Astro Logo"
+				image="/images/astro-logo.png"
+			/>
+			<Logo
+				href="https://wails.io/"
+				title="Wails Logo"
+				image="/images/wails-logo.png"
+			/>
+		</section>
 	</main>
 </Layout>
 
 <style>
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	section {
 	}
 </style>
