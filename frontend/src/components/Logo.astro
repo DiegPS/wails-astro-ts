@@ -11,3 +11,19 @@ const { title, image, href } = Astro.props;
 <a href={href}>
   <img src={image} alt={title} />
 </a>
+
+<style>
+  img {
+    max-height: 200px;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  a:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    transition: all 0.2s ease-in-out;
+  }
+</style>
