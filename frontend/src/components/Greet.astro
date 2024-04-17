@@ -7,15 +7,15 @@
 <script>
   import { Greet } from "../../wailsjs/go/main/App";
 
-  let nameElement = document.getElementById("name");
+  let nameElement: any = document.getElementById("name");
 
   nameElement?.focus();
 
-  let resultElement = document.getElementById("result");
+  let resultElement: any = document.getElementById("result");
 
   let buttonElement = document.getElementById("buttonElement");
 
-  nameElement?.addEventListener("keyup", (event) => {
+  nameElement?.addEventListener("keyup", (event: KeyboardEvent) => {
     if (event.key === "Enter") {
       greet();
     }
@@ -24,8 +24,6 @@
 
   function greet() {
     let name = nameElement?.value;
-
-    if (name === "") return;
 
     try {
       Greet(name)
