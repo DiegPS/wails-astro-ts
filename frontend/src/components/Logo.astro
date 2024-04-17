@@ -7,10 +7,12 @@ interface Props {
 const { title, image, href } = Astro.props;
 ---
 
-<h2>{title}</h2>
-<a href={href}>
-  <img src={image} alt={title} />
-</a>
+<article>
+  <a href={href}>
+    <img src={image} alt={title} />
+  </a>
+  <h2>{title}</h2>
+</article>
 
 <style>
   img {
