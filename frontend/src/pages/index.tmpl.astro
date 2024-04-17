@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
+import Greet from "../components/Greet.astro";
 ---
 
 <Layout title="{{.ProjectName}}">
@@ -18,12 +19,15 @@ import Logo from "../components/Logo.astro";
 				image="/images/wails-logo.png"
 			/>
 		</section>
+		<Greet />
 	</main>
 </Layout>
 
 <style>
-	h1 {
-		text-align: center;
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	section {
 		padding: 5rem;

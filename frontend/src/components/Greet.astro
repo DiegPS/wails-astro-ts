@@ -1,0 +1,68 @@
+<p class="result" id="result">Please enter your name below 👇</p>
+<section id="input">
+  <input id="name" type="text" autocomplete="off" />
+  <button id="buttonElement">Greet</button>
+</section>
+
+<script>
+  import { Greet } from "../../wailsjs/go/main/App";
+
+  let nameElement = document.getElementById("name");
+
+  nameElement?.focus();
+
+  let resultElement = document.getElementById("result");
+
+  let buttonElement = document.getElementById("buttonElement");
+
+  nameElement?.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      greet();
+    }
+  });
+  buttonElement?.addEventListener("click", greet);
+
+  function greet() {
+    let name = nameElement?.value;
+
+    if (name === "") return;
+
+    try {
+      Greet(name)
+        .then((result) => {
+          resultElement.innerText = result;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+</script>
+
+<style>
+  section {
+    display: flex;
+    gap: 1rem;
+  }
+  button {
+    border: 1px solid #f2f7f2;
+    border-radius: 5px;
+    padding: 0.5rem;
+    color: #f2f7f2;
+    background-color: #1c1d2743;
+  }
+  button:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    transition: all 0.3s ease-in-out;
+  }
+  input {
+    border: 1px solid #f2f7f2;
+    border-radius: 5px;
+    padding: 0.5rem;
+    color: #f2f7f2;
+    background-color: #1c1d2743;
+  }
+</style>
